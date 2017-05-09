@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 /* global sinon*/
 
-import { ReduxViewBinder } from '../../src/redux-view-binder';
+import ReduxViewBinder from '../../src/redux-view-binder';
 
 describe('ReduxViewBinder', function () {
     'use strict';
