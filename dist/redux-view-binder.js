@@ -1,4 +1,4 @@
-(function (exports) {
+var ReduxViewBinder = (function () {
 'use strict';
 
 var classCallCheck = function (instance, Constructor) {
@@ -122,6 +122,6 @@ var ReduxViewBinder = function () {
     return ReduxViewBinder;
 }();
 
-exports.ReduxViewBinder = ReduxViewBinder;
+return ReduxViewBinder;
 
-}((this.ReduxViewBinder = this.ReduxViewBinder || {})));
+}());

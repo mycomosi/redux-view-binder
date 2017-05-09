@@ -87,4 +87,4 @@ class ReduxViewBinder {
     }
 }
 
-export { ReduxViewBinder };
+export default ReduxViewBinder;

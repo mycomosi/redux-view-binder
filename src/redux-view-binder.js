@@ -2,7 +2,7 @@
  *
  *   ReduxViewBinder
  */
-export class ReduxViewBinder {
+export default class ReduxViewBinder {
     /**
      *  Creates a new ReduxViewBinder
      *
