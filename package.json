@@ -13,8 +13,7 @@
     "transpile-test": "./node_modules/.bin/rollup -c rollup.test.js",
     "test": "cross-env NODE_ENV=test npm run transpile-test && nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "generate-doc": "./node_modules/.bin/jsdoc -c jsdoc.json",
-    "release": "npm run build && npm run generate-doc && npm version patch"
+    "generate-doc": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
