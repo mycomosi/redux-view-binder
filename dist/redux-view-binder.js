@@ -25,7 +25,16 @@ var createClass = function () {
   };
 }();
 
+/** (c) 2017 Objective Systems Integrators, Inc. (MYCOM OSI) All Rights Reserved.
+ *
+ *   ReduxViewBinder
+ */
 var ReduxViewBinder = function () {
+    /**
+     *  Creates a new ReduxViewBinder
+     *
+     * @param {Object} store - The Redux store.
+     */
     function ReduxViewBinder(store) {
         classCallCheck(this, ReduxViewBinder);
 

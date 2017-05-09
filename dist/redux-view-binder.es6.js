@@ -1,5 +1,13 @@
+/** (c) 2017 Objective Systems Integrators, Inc. (MYCOM OSI) All Rights Reserved.
+ *
+ *   ReduxViewBinder
+ */
 class ReduxViewBinder {
-
+    /**
+     *  Creates a new ReduxViewBinder
+     *
+     * @param {Object} store - The Redux store.
+     */
     constructor(store){
         this._store = store;
     }

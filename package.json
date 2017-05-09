@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "description": "Bind your eweb-compentn views easily with redux",
   "main": "/src/redux-view-binder.js",
+  "files": [
+    "dist/redux-view-binder.es6.js",
+    "dist/redux-view-binder.js",
+    "dist/redux-view-binder.min.js"
+  ],
   "scripts": {
     "build": "./node_modules/.bin/rollup -c rollup.es.js && ./node_modules/.bin/rollup -c rollup.iife.min.js && ./node_modules/.bin/rollup -c rollup.iife.js",
     "transpile-test": "./node_modules/.bin/rollup -c rollup.test.js",
     "test": "cross-env NODE_ENV=test npm run transpile-test && nyc mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "generate-doc": "./node_modules/.bin/jsdoc -c jsdoc.json",
-    "release": "npm run build && npm run generate-doc"
+    "release": "npm run build && npm run generate-doc && npm version patch"
   },
   "repository": {
     "type": "git",
