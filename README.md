@@ -11,6 +11,9 @@ If you are using React, you might want to have a look at react-redux which provi
 Quick example, let's imagine we have a todolist view, where we display a list of todos. Inside our Redux state we have a todos field.
 
 ```Javascript
+// Import ReduxViewBinder in case of es module
+import ReduxViewBinder from 'redux-view-binder';
+
 // Create binder using store from Redux
 const binder = new ReduxViewBinder(store);
 
@@ -30,7 +33,7 @@ binder.bind(
 ```
 
 
-## Advance scenarios
+## Optional parameters
 
 Here is the bind method signature
 
@@ -45,6 +48,9 @@ In some other case you want to pass to the onChange method another field from th
 Example of usage
 
 ```Javascript
+// Import ReduxViewBinder in case of es module
+import ReduxViewBinder from 'redux-view-binder';
+
 // Create binder using store from Redux
 const binder = new ReduxViewBinder(store);
 
