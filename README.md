@@ -21,10 +21,47 @@ let todoList = document.querySelector('#todolist');
 //bind the component to Redux state changes
 binder.bind(
     (model) => { return state.todos; }, //only watch changes of todos field.
-    (todos) => {    
+    (todos) => { // the watch field is passed to the onChange method.   
         //if todos field has changed then we should refresh  the todoList view
         todoList.refresh(todos);
     }
+);
+
+```
+
+
+## Advance scenarios
+
+Here is the bind method signature
+
+```Javascript
+bind(watch, onChange, [view], [filter])
+```
+
+In some cases you want to pass the view to the binder, the view will be provided to the onChange method as the second parameter.
+
+In some other case you want to pass to the onChange method another field from the Redux state object than the one that is watched. In that case the filter method can be used.
+
+Example of usage
+
+```Javascript
+// Create binder using store from Redux
+const binder = new ReduxViewBinder(store);
+
+//... some time later
+//retrieve the web component
+let todoList = document.querySelector('#todolist');
+
+//... some time later
+//bind the component to Redux state changes
+binder.bind(
+    (model) => { return state.todos; }, //only watch changes of todos field.
+    (state, view) => { // the watch field is passed to the onChange method.   
+        //if todos field has changed then we should refresh  the todoList view
+        view.refresh(state.todos);
+    },
+    todoList, //pass the view object, will be passed to the onChange method as second parameter
+    (model) => { return state; } // passing the full state object instead of only the todos field
 );
 
 ```
