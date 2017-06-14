@@ -1,6 +1,6 @@
 {
   "name": "redux-view-binder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bind your eweb-compentn views easily with redux",
   "main": "dist/redux-view-binder.js",
   "module": "dist/redux-view-binder.es.js",
