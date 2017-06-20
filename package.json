@@ -1,6 +1,6 @@
 {
   "name": "redux-view-binder",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Bind your web-components views easily with redux",
   "main": "dist/redux-view-binder.min.js",
   "module": "dist/redux-view-binder.es.js",
