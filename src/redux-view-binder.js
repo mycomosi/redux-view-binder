@@ -84,8 +84,4 @@ export default class ReduxViewBinder {
         fn();
         return unsubscribe;
     }
-
-    _jsonEqual(a,b) {
-        return JSON.stringify(a) === JSON.stringify(b);
-    }
 }
