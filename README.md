@@ -1,7 +1,7 @@
 # redux-view-binder
 [![Build Status](https://travis-ci.org/mycomosi/redux-view-binder.svg?branch=master)](https://travis-ci.org/mycomosi/redux-view-binder)
 [![Coverage Status](https://coveralls.io/repos/github/mycomosi/redux-view-binder/badge.svg?branch=master)](https://coveralls.io/github/mycomosi/redux-view-binder?branch=master)<br>
-Bind you web-component views easily with Redux (no React, no Polymer).
+Bind your web-component views easily with Redux (no React, no Polymer).
 
 ## Binding Views
 Redux is a very nice library to centralize the management of the state of your application. The goal of redux-view-binder is to provide a small helper to 'bind' your views to your Redux state changes. Simply said, it means refreshing your views based on the changes of your Redux state automatically.

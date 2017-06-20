@@ -1,3 +1,5 @@
+import isEqual from "lodash-es/isEqual";
+
 /** (c) 2017 Objective Systems Integrators, Inc. (MYCOM OSI) All Rights Reserved.
  *
  *   ReduxViewBinder
@@ -62,14 +64,15 @@ export default class ReduxViewBinder {
     bind(watch, onChange, view, filter){
         let currentState;
 
+        //This is called after the reducer has been called with a new action
         function handleChange() {
             let model = this._store.getState();
             let nextState = watch(model);
-            if (!this._jsonEqual(nextState, currentState)) {
-                currentState = nextState;
+            if (!isEqual(nextState, currentState)) {
+                currentState = nextState; //save in the closure for next time
                 let filteredModel = currentState;
                 if (filter)
-                filteredModel = filter(model);
+                    filteredModel = filter(model);
                 onChange(filteredModel, this._store.dispatch, view);
             }
         }

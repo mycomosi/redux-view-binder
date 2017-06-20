@@ -1,64 +1,67 @@
 {
-  "name": "redux-view-binder",
-  "version": "0.0.4",
-  "description": "Bind your eweb-compentn views easily with redux",
-  "main": "dist/redux-view-binder.js",
-  "module": "dist/redux-view-binder.es.js",
-  "files": [
-    "dist/redux-view-binder.cjs.js",
-    "dist/redux-view-binder.es.js",
-    "dist/redux-view-binder.js",
-    "dist/redux-view-binder.min.js",
-    "dist/redux-view-binder.umd.js"
-  ],
-  "scripts": {
-    "build": "./node_modules/.bin/rollup -c rollup.js && ./node_modules/.bin/rollup -c rollup.iife.js && ./node_modules/.bin/rollup -c rollup.es.js",
-    "transpile-test": "./node_modules/.bin/rollup -c rollup.test.js",
-    "test": "cross-env NODE_ENV=test npm run transpile-test && nyc mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "generate-doc": "./node_modules/.bin/jsdoc -c jsdoc.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mycomosi/redux-view-binder.git"
-  },
-  "keywords": [
-    "redux",
-    "view",
-    "web",
-    "component",
-    "binding",
-    "bind"
-  ],
-  "author": "Ronan Quillevere",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mycomosi/redux-view-binder/issues"
-  },
-  "homepage": "https://github.com/mycomosi/redux-view-binder#readme",
-  "dependencies": {},
-  "nyc": {
-    "reporter": [
-      "text",
-      "html"
-    ]
-  },
-  "devDependencies": {
-    "babel-plugin-istanbul": "^4.0.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babelrc-rollup": "^3.0.0",
-    "chai": "^3.5.0",
-    "coveralls": "^2.13.1",
-    "cross-env": "^3.2.4",
-    "docdash": "^0.4.0",
-    "jsdoc": "^3.4.3",
-    "mocha": "^3.2.0",
-    "nyc": "^10.1.2",
-    "rollup": "^0.41.4",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-eslint": "^3.0.0",
-    "rollup-plugin-multi-entry": "^2.0.1",
-    "rollup-plugin-uglify": "^1.0.1",
-    "sinon": "^1.17.7"
-  }
+    "name": "redux-view-binder",
+    "version": "0.0.4",
+    "description": "Bind your web-components views easily with redux",
+    "main": "dist/redux-view-binder.min.js",
+    "module": "dist/redux-view-binder.es.js",
+    "files": [
+        "dist/redux-view-binder.cjs.js",
+        "dist/redux-view-binder.es.js",
+        "dist/redux-view-binder.js",
+        "dist/redux-view-binder.min.js",
+        "dist/redux-view-binder.umd.js"
+    ],
+    "scripts": {
+        "build": "./node_modules/.bin/rollup -c rollup.js && ./node_modules/.bin/rollup -c rollup.iife.js && ./node_modules/.bin/rollup -c rollup.es.js",
+        "_transpile-test": "./node_modules/.bin/rollup -c rollup.test.js",
+        "test": "cross-env NODE_ENV=test npm run _transpile-test && nyc mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls",
+        "generate-doc": "./node_modules/.bin/jsdoc -c jsdoc.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mycomosi/redux-view-binder.git"
+    },
+    "keywords": [
+        "redux",
+        "view",
+        "web",
+        "component",
+        "binding",
+        "bind"
+    ],
+    "author": "Ronan Quillevere",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mycomosi/redux-view-binder/issues"
+    },
+    "homepage": "https://github.com/mycomosi/redux-view-binder#readme",
+    "dependencies": {},
+    "nyc": {
+        "reporter": [
+            "text",
+            "html"
+        ]
+    },
+    "devDependencies": {
+        "babel-plugin-istanbul": "^4.0.0",
+        "babel-preset-es2015-rollup": "^3.0.0",
+        "babelrc-rollup": "^3.0.0",
+        "chai": "^3.5.0",
+        "coveralls": "^2.13.1",
+        "cross-env": "^3.2.4",
+        "docdash": "^0.4.0",
+        "jsdoc": "^3.4.3",
+        "mocha": "^3.2.0",
+        "nyc": "^10.1.2",
+        "rollup": "^0.41.4",
+        "rollup-plugin-babel": "^2.7.1",
+        "rollup-plugin-eslint": "^3.0.0",
+        "rollup-plugin-multi-entry": "^2.0.1",
+        "rollup-plugin-uglify": "^1.0.1",
+        "sinon": "^1.17.7"
+    },
+    "dependencies" : {
+        "lodash-es": "^4.17.4"
+    }
 }
