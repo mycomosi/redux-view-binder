@@ -5,6 +5,7 @@ export default {
     entry: 'src/redux-view-binder',
     dest: 'dist/redux-view-binder.es.js',
     format: 'es',
+    external: ['lodash-es', 'lodash-es/isEqual'],
     plugins: [
         resolve(),
         eslint()

@@ -7,6 +7,7 @@ import resolve from 'rollup-plugin-node-resolve';
 export default {
     entry: 'src/redux-view-binder',
     moduleName: 'ReduxViewBinder',
+    external: ['lodash-es', 'lodash-es/isEqual'],
     plugins: [
         resolve(),
         eslint(),

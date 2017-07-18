@@ -8,6 +8,7 @@ export default {
     dest: 'dist/redux-view-binder.js',
     format: 'iife',
     moduleName: 'ReduxViewBinder',
+    external: ['lodash-es', 'lodash-es/isEqual'],
     plugins: [
         resolve(),
         eslint(),
