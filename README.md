@@ -23,7 +23,7 @@ let todoList = document.querySelector('#todolist');
 
 //bind the component to Redux state changes
 binder.bind(
-    (model) => { return state.todos; }, //only watch changes of todos field.
+    (state) => { return state.todos; }, //only watch changes of todos field.
     (todos) => { // the watch field is passed to the onChange method.   
         //if todos field has changed then we should refresh  the todoList view
         todoList.refresh(todos);
@@ -61,13 +61,13 @@ let todoList = document.querySelector('#todolist');
 //... some time later
 //bind the component to Redux state changes
 binder.bind(
-    (model) => { return state.todos; }, //only watch changes of todos field.
+    (state) => { return state.todos; }, //only watch changes of todos field.
     (state, view) => { // the watch field is passed to the onChange method.   
         //if todos field has changed then we should refresh  the todoList view
         view.refresh(state.todos);
     },
     todoList, //pass the view object, will be passed to the onChange method as second parameter
-    (model) => { return state; } // passing the full state object instead of only the todos field
+    (state) => { return state; } // passing the full state object instead of only the todos field
 );
 
 ```
