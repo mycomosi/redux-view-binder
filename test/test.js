@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 /* global sinon*/
 
-import ReduxViewBinder from '../../src/redux-view-binder';
+import ReduxViewBinder from '../src/redux-view-binder';
 
 describe('ReduxViewBinder', function () {
     'use strict';
@@ -28,7 +28,7 @@ describe('ReduxViewBinder', function () {
     });
 
 
-    it('should filter the Redux state to pass only the necessary piece of the object to the listener', function () {
+    it('should filter the Redux model (aka state) to pass only the necessary piece of the object to the onChange handler', function () {
 
         // Given
         let model = {
@@ -70,7 +70,7 @@ describe('ReduxViewBinder', function () {
 
     });
 
-    it('should listen to only a specific part of the Redux state for changes and if no filtering is specified should return the observe field', function () {
+    it('should listen to only a specific part of the Redux model (aka state) for changes and if no filtering is specified should return the observe field', function () {
 
         // Given
         let model = {
@@ -135,5 +135,51 @@ describe('ReduxViewBinder', function () {
         sinon.assert.calledTwice(onChange);
         sinon.assert.calledWith(onChange, {insideField2:''});
         sinon.assert.calledWith(onChange, {insideField2:'42'});
+    });
+
+    it('should pass the dispatch method as well as a reference of the view to the onChange handler', function () {
+
+        // Given
+        let model = {
+            field1 : {
+
+            },
+            field2:{
+                insideField2:''
+            }
+        };
+
+        let dispatch = sinon.spy();
+
+        store = {
+            getState : function(){
+                return model;
+            },
+            dispatch : dispatch,
+            subscribe : function(){
+
+            }
+        };
+
+        let watch = function(model){
+            return model.field1;
+        };
+
+        let onChange = sinon.spy();
+
+        let filter = function(model){
+            return model.field2;
+        };
+
+        let binder = new ReduxViewBinder(store);
+
+        let view = {};
+
+        // When
+        binder.bind(watch, onChange, view, filter);
+
+        // Then
+        sinon.assert.calledWith(onChange, model.field2, dispatch, view);
+
     });
 });
