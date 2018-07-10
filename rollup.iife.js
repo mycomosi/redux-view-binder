@@ -4,11 +4,13 @@ import eslint from 'rollup-plugin-eslint';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-    entry: 'src/redux-view-binder',
-    dest: 'dist/redux-view-binder.js',
-    format: 'iife',
-    moduleName: 'ReduxViewBinder',
-    external: ['lodash-es', 'lodash-es/isEqual'],
+    input: 'src/redux-view-binder',
+    output : {
+        file: 'dist/redux-view-binder.js',
+        format: 'iife',
+        name: 'ReduxViewBinder',
+        external: ['lodash-es', 'lodash-es/isEqual']
+    },
     plugins: [
         resolve(),
         eslint(),
